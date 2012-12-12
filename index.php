@@ -64,6 +64,13 @@ if(got('action','match'))
 			{
 				overflow:auto;
 			}
+			pre
+			{
+				border:1px solid #ccc;
+				padding:5px;
+				border-radius:4px;
+				background-color:#ebebeb;
+			}
 		</style>
 		<script type="text/javascript">
 			var test = function(){
@@ -95,7 +102,10 @@ if(got('action','match'))
 			};
 		
 			$(function(){
-				$('#regexp').keyup(function(){test();});
+				$('#regexp').keyup(function(){
+					test();
+					$("#php").html("$exp = <<<'NOW'\n"+$('#regexp').val()+"\nNOW;");
+				});
 				$('#text').keyup(function(){test();});
 			});
 			
@@ -107,6 +117,9 @@ if(got('action','match'))
 			Expression (put the enclosing slashes!)<br/>
 			<input id="regexp" type="text"></input>
 			<br/>
+			<p>
+				Copy-pasta: <pre id='php'></pre><br/>
+			</p>
 			Test text<br/>
 			<textarea id="text"></textarea>
 			<div id="matches">
