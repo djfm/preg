@@ -104,7 +104,7 @@ if(got('action','match'))
 	
 	<body>
 		<div id="main">
-			Expression<br/>
+			Expression (put the enclosing slashes!)<br/>
 			<input id="regexp" type="text"></input>
 			<br/>
 			Test text<br/>
