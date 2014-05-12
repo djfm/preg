@@ -1,4 +1,4 @@
-<?
+<?php
 
 function got($var, $value = null)
 {
